@@ -143,6 +143,7 @@ print_array_loop:
 	jal x0, print_array_loop
 	
 print_array_exit:
+	ld s0, 0(sp)
 	addi sp, sp, 8
 	jalr x0, 0(ra)
 
