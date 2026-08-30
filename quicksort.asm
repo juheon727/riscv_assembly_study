@@ -23,8 +23,7 @@ quicksort:
 	addi t2, a2, 0
 	
 	# Getting the value of pivot = arr[l] and loading to t6
-	add t0, a1, x0
-	slli t0, t0, 3
+	slli t0, a1, 3
 	add t0, t0, a0
 	ld t6, 0(t0)
 	
@@ -36,8 +35,7 @@ quicksort_iloop:
 	blt t2, t1, quicksort_jloop
 
 	# Getting the value of arr[i] and loading to t3
-	add t0, t1, x0
-	slli t0, t0, 3
+	slli t0, t1, 3
 	add t0, t0, a0
 	ld t3, 0(t0)
 	
@@ -52,8 +50,7 @@ quicksort_jloop:
 	blt t2, t1, quicksort_swap
 	
 	# Getting the value of arr[j] and loading to t3
-	add t0, t2, x0
-	slli t0, t0, 3
+	slli t0, t2, 3
 	add t0, t0, a0
 	ld t3, 0(t0)
 	
@@ -67,13 +64,11 @@ quicksort_swap:
 	blt t2, t1, quicksort_swap_lj
 
 	# Swap i(t1), j(t2) here
-	add t0, t1, x0
-	slli t0, t0, 3
+	slli t0, t1, 3
 	add t0, t0, a0
 	ld t3, 0(t0) # t3 has a[i]
 	
-	add t5, t2, x0
-	slli t5, t5, 3
+	slli t5, t2, 3
 	add t5, t5, a0
 	ld t4, 0(t5) # t4 has a[j]
 	
@@ -89,8 +84,7 @@ quicksort_swap_lj:
 	slli t0, t0, 3
 	add t0, t0, a0
 	
-	add t5, t2, x0
-	slli t5, t5, 3
+	slli t5, t2, 3
 	add t5, t5, a0
 	ld t4, 0(t5) # t4 has a[j]
 	
