@@ -16,7 +16,7 @@ space:
 quicksort:
 	bge a1, a2, quicksort_base
 	
-	addi sp, sp, -8
+	addi sp, sp, -16
 	sd ra, 0(sp)
 	
 	addi t1, a1, 1
@@ -109,7 +109,7 @@ quicksort_recursion:
 	jal ra, quicksort
 	
 	ld ra, 32(sp)
-	addi sp, sp, 40
+	addi sp, sp, 48
 	jalr x0, 0(ra)
 	
 quicksort_base:
